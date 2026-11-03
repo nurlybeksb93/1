@@ -18,6 +18,8 @@ test('serves landing and refuses invalid registration and database access', asyn
  try {
   const page = await fetch(url);
   assert.equal(page.status,200); assert.match(await page.text(),/register-form/);
+  assert.equal((await fetch(url+'/app.js?v=1840628-2')).status,200);
+  assert.equal((await fetch(url+'/style.css?v=1840628-2')).status,200);
   const invalid = await fetch(url+'/api/register',{method:'POST',body:JSON.stringify({...base,consent:false})});
   assert.equal(invalid.status,400);
   assert.equal((await fetch(url+'/data/registrations.sqlite')).status,404);

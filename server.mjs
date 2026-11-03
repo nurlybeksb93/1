@@ -49,7 +49,7 @@ export const server = http.createServer(async (req, res) => {
   } catch { res.writeHead(400); res.end('{"error":"request"}'); }
   return;
  }
- const file = files[req.url];
+ const file = files[req.url.split('?')[0]];
  if (req.method !== 'GET' || !file) { res.writeHead(404); res.end('Not found'); return; }
  try { const body = await readFile(join(root, 'public', file[0])); res.writeHead(200, { 'Content-Type': file[1] }); res.end(body); }
  catch { res.writeHead(500); res.end('Server error'); }
