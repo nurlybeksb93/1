@@ -6,27 +6,16 @@ const ru = {
  "lead": "UFC. Асу Алмабаев. Команда BHS.",
  "cta": "Зарегистрироваться",
  "ticker": "ОДИН БОЙ. ОБЩИЕ ЭМОЦИИ. СВОЯ КОМАНДА. ✳ BHS FIGHT NIGHT",
- "detailsLabel": "01 / МЕСТО И ВРЕМЯ",
  "details": "Всё главное",
  "dateLabel": "Дата",
  "date": "21 ноября 2026",
- "timeLabel": "Время сбора",
- "time": "20:00 · предварительно",
+ "timeLabel": "Начало мероприятия",
+ "time": "21:00",
  "locationLabel": "Место встречи",
  "location": "Тажибаевой, 155",
  "building": "Здание «31 канала»",
- "programLabel": "02 / ПРОГРАММА",
- "programTitle": "План вечера",
- "welcome": "Сбор команды",
- "welcomeText": "20:00 · предварительно",
- "fight": "Болеем за Асу",
- "fightText": "Примерно в 23:00",
- "activities": "UFC на PS5",
- "activitiesText": "Турнир по UFC",
- "audienceLabel": "03 / ДЛЯ КОГО",
- "audienceTitle": "Кто с нами?",
- "audienceText": "Для пап школьников BHS, которые хотят поболеть за Асу Алмабаева и насладиться просмотром UFC в особой атмосфере. Приходите один или с сыном/с дочкой",
- "registerLabel": "04 / РЕГИСТРАЦИЯ",
+ "programTitle": "Что вас ждет",
+ "audienceTitle": "Кто с нами:",
  "registerTitle": "Вступай в команду",
  "registerText": "Заполните форму — болеем вместе.",
  "nameLabel": "Имя и фамилия",
@@ -47,7 +36,27 @@ const ru = {
  "invalid": "Проверьте имя, 10 цифр телефона и согласие.",
  "error": "Нет подтверждения. Уточните статус у организаторов перед повторной отправкой.",
  "timeout": "Время ожидания истекло. Уточните статус у организаторов.",
- "rejected": "Заявка отклонена. Проверьте данные."
+ "rejected": "Заявка отклонена. Проверьте данные.",
+ "staff": "Сотрудники",
+ "parentPhoneLabel": "Телефон родителя",
+ "parentPhoneHint": "Отдельный контакт для связи с родителем",
+ "consentRequired": "Поставьте галочку согласия на обработку данных, чтобы отправить заявку.",
+ "program1": "Просмотр боя в легендарном месте",
+ "programText1": "Зал, где тренируются Асу Алмабаев и Шавкат Рахмонов",
+ "program2": "Турнир по UFC на PS5",
+ "programText2": "Виртуальные бои на консоли и заруба за титул вечера",
+ "program3": "Встреча с про-бойцами",
+ "programText3": "Общение со спортсменами, фото и разбор тактик",
+ "program4": "Комьюнити BHS",
+ "programText4": "Драйвовая атмосфера в кругу пап, учеников, учителей и команды",
+ "audience1": "Папы учеников",
+ "audienceText1": "Поболеть за Асу Алмабаева, отдохнуть и провести время с детьми",
+ "audience2": "Ученики BHS",
+ "audienceText2": "Погрузиться в атмосферу и сыграть в турнире по UFC на PS5",
+ "audience3": "Команда BHS",
+ "audienceText3": "Провести день вместе вне уроков",
+ "audience4": "Профессиональные бойцы",
+ "audienceText4": "Специальные гости события"
 };
 const kk = {
  "announcement": "Қатысу тегін, орын саны шектеулі",
@@ -56,27 +65,16 @@ const kk = {
  "lead": "UFC. Асу Алмабаев. BHS командасы.",
  "cta": "Тіркелу",
  "ticker": "БІР ЖЕКПЕ-ЖЕК. ОРТАҚ ӘСЕР. БІР КОМАНДА. ✳ BHS FIGHT NIGHT",
- "detailsLabel": "01 / ОРНЫ МЕН УАҚЫТЫ",
  "details": "Ең бастысы",
  "dateLabel": "Күні",
  "date": "2026 жылғы 21 қараша",
- "timeLabel": "Жиналу уақыты",
- "time": "20:00 · алдын ала",
+ "timeLabel": "Іс-шараның басталуы",
+ "time": "21:00",
  "locationLabel": "Кездесу орны",
  "location": "Тәжібаева көшесі, 155",
  "building": "«31 арна» ғимараты",
- "programLabel": "02 / БАҒДАРЛАМА",
- "programTitle": "Кеш бағдарламасы",
- "welcome": "Командамен кездесу",
- "welcomeText": "20:00 · алдын ала",
- "fight": "Асуға қолдау",
- "fightText": "Шамамен 23:00-де",
- "activities": "PS5-тегі UFC",
- "activitiesText": "UFC турнирі",
- "audienceLabel": "03 / КІМДЕР ҮШІН",
- "audienceTitle": "Кім бізбен бірге?",
- "audienceText": "Асу Алмабаевқа қолдау көрсетіп, UFC жекпе-жектерін ерекше атмосферада тамашалағысы келетін BHS оқушыларының әкелеріне арналған. Жалғыз немесе ұлыңызбен/қызыңызбен келіңіз.",
- "registerLabel": "04 / ТІРКЕЛУ",
+ "programTitle": "Сіздерді не күтеді",
+ "audienceTitle": "Кім бізбен бірге:",
  "registerTitle": "Командаға қосыл",
  "registerText": "Форманы толтырыңыз — бірге қолдайық.",
  "nameLabel": "Аты-жөніңіз",
@@ -97,7 +95,27 @@ const kk = {
  "invalid": "Аты-жөніңізді, телефонның 10 санын және келісімді тексеріңіз.",
  "error": "Растау жоқ. Қайта жібермес бұрын ұйымдастырушылардан мәртебесін сұраңыз.",
  "timeout": "Күту уақыты аяқталды. Ұйымдастырушылардан мәртебесін сұраңыз.",
- "rejected": "Өтінім қабылданбады. Деректерді тексеріңіз."
+ "rejected": "Өтінім қабылданбады. Деректерді тексеріңіз.",
+ "staff": "Қызметкерлер",
+ "parentPhoneLabel": "Ата-ананың телефоны",
+ "parentPhoneHint": "Ата-анамен байланысуға арналған бөлек нөмір",
+ "consentRequired": "Өтінімді жіберу үшін деректерді өңдеуге келісім белгісін қойыңыз.",
+ "program1": "Аңызға айналған залда жекпе-жек тамашалау",
+ "programText1": "Асу Алмабаев пен Шавкат Рахмонов жаттығатын зал",
+ "program2": "PS5-тегі UFC турнирі",
+ "programText2": "Консольдегі виртуалды жекпе-жектер және кеш чемпионы атағына талас",
+ "program3": "Кәсіпқой спортшылармен кездесу",
+ "programText3": "Спортшылармен әңгімелесу, суретке түсу және тактиканы талдау",
+ "program4": "BHS қауымдастығы",
+ "programText4": "Әкелер, оқушылар, мұғалімдер және команда ортасындағы ерекше атмосфера",
+ "audience1": "Оқушылардың әкелері",
+ "audienceText1": "Асу Алмабаевқа қолдау көрсетіп, демалу және балалармен уақыт өткізу",
+ "audience2": "BHS оқушылары",
+ "audienceText2": "Ерекше атмосфераны сезініп, PS5-тегі UFC турниріне қатысу",
+ "audience3": "BHS командасы",
+ "audienceText3": "Сабақтан тыс бірге уақыт өткізу",
+ "audience4": "Кәсіпқой спортшылар",
+ "audienceText4": "Іс-шараның арнайы қонақтары"
 };
 let language = 'kk';
 let statusKey = '';
@@ -113,7 +131,7 @@ function translate() {
 }
 document.querySelectorAll('[data-lang]').forEach(el => el.addEventListener('click', () => { language = el.dataset.lang; translate(); }));
 const form = document.querySelector('form');
-const phoneInput = document.querySelector('#phone');
+function attachPhoneMask(phoneInput) {
 function updatePhone(value, digitPosition) {
  phoneInput.value = formatNationalPhone(value);
  if (digitPosition !== undefined) {
@@ -147,21 +165,56 @@ phoneInput.addEventListener('keydown', event => {
  if (index >= 0 && index < digits.length) updatePhone(digits.slice(0, index) + digits.slice(index + 1), index);
 });
 
-form.addEventListener('invalid', () => { statusKey = 'invalid'; translate(); }, true);
+}
+document.querySelectorAll('input[type=tel]').forEach(attachPhoneMask);
 
-form.addEventListener('change', () => {
- const segment = new FormData(form).get('segment');
- document.querySelector('#children-field').hidden = segment === 'father';
- document.querySelector('#pickup-note').hidden = segment !== 'student';
+
+const consentInput = form.elements.consent;
+function syncParticipation() {
+ const segment = form.elements.segment.value;
+ const student = segment === 'student';
+ const alone = ['father', 'staff'].includes(segment);
+ const childrenSelect = form.elements.children;
+ childrenSelect.querySelectorAll('option').forEach(option => {
+  option.hidden = student && option.value !== '1';
+  option.disabled = student && option.value !== '1';
+ });
+ if (student) childrenSelect.value = '1';
+ childrenSelect.disabled = alone;
+ document.querySelector('#children-field').hidden = alone;
+ document.querySelector('#parent-phone-field').hidden = !student;
+ form.elements.parentPhone.disabled = !student;
+ form.elements.parentPhone.required = student;
+ document.querySelector('#pickup-note').hidden = !student;
+}
+form.addEventListener('change', syncParticipation);
+consentInput.addEventListener('change', () => {
+ if (consentInput.checked) {
+  consentInput.removeAttribute('aria-invalid');
+  document.querySelector('.consent').classList.remove('has-error');
+  if (statusKey === 'consentRequired') { statusKey = ''; translate(); }
+ }
 });
+function showConsentError() {
+ statusKey = 'consentRequired'; translate();
+ consentInput.setAttribute('aria-invalid', 'true');
+ document.querySelector('.consent').classList.add('has-error');
+ consentInput.focus();
+ document.querySelector('#form-status').scrollIntoView({block:'nearest',behavior:'smooth'});
+}
 form.addEventListener('submit', async event => {
  event.preventDefault();
  const button = form.querySelector('button[type=submit]');
  if (button.disabled) return;
+ if (!consentInput.checked) { showConsentError(); return; }
+ if (!form.checkValidity()) { statusKey = 'invalid'; translate(); form.reportValidity(); return; }
  const data = new FormData(form);
  const digits = nationalDigits(data.get('phone'));
  const phone = '+7' + digits;
- const children = data.get('segment') === 'father' ? 0 : Number(data.get('children'));
+ const segment = data.get('segment');
+ const children = ['father', 'staff'].includes(segment) ? 0 : segment === 'student' ? 1 : Number(data.get('children'));
+ const parentPhone = segment === 'student' ? '+7' + nationalDigits(data.get('parentPhone')) : '';
+ if (segment === 'student' && !/^\+7[0-9]{10}$/.test(parentPhone)) { statusKey = 'invalid'; translate(); form.elements.parentPhone.focus(); return; }
  if (digits.length !== 10 || !Number.isInteger(children) || children < 0 || children > 3) {
   statusKey = 'invalid'; translate(); document.querySelector('#phone').focus(); return;
  }
@@ -173,7 +226,8 @@ form.addEventListener('submit', async event => {
    name: data.get('name'),
    phone,
    segment: data.get('segment'),
-   children: data.get('segment') === 'father' ? '0' : data.get('children'),
+   children: String(children),
+   parentPhone,
    language,
    consent: String(data.get('consent') === 'on')
   });
@@ -183,10 +237,11 @@ form.addEventListener('submit', async event => {
   if (!response.ok) throw Error('Registration failed');
   const result = await response.json();
   if (result.ok !== true) { statusKey = 'rejected'; return; }
-  statusKey = 'success'; form.reset(); document.querySelector('#children-field').hidden = false; document.querySelector('#pickup-note').hidden = true;
+  statusKey = 'success'; form.reset(); syncParticipation();
  } catch (error) { statusKey = error.name === 'AbortError' ? 'timeout' : 'error'; }
  finally { clearTimeout(timeout); button.disabled = false; translate(); if (statusKey === 'success') window.alert((language === 'kk' ? kk : ru).success); }
 });
+syncParticipation();
 translate();
 const scriptWarning = document.querySelector('#script-warning');
 if (scriptWarning) scriptWarning.hidden = true;

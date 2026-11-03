@@ -11,17 +11,24 @@ db.exec(`CREATE TABLE IF NOT EXISTS registrations (
  id INTEGER PRIMARY KEY, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
  name TEXT NOT NULL, phone TEXT NOT NULL, segment TEXT NOT NULL,
  children INTEGER NOT NULL, language TEXT NOT NULL, consent INTEGER NOT NULL)`);
+if (!db.prepare('PRAGMA table_info(registrations)').all().some(column => column.name === 'parent_phone')) {
+ db.exec("ALTER TABLE registrations ADD COLUMN parent_phone TEXT NOT NULL DEFAULT ''");
+}
 export function validate(input) {
+ if (!input || typeof input !== 'object') return null;
  const name = typeof input.name === 'string' ? input.name.trim() : '';
  const phone = typeof input.phone === 'string' ? input.phone.replace(/[^\d+]/g, '') : '';
  const children = Number(input.children);
+ const parentPhone = input.segment === 'student' && typeof input.parentPhone === 'string' ? input.parentPhone.replace(/[^\d+]/g, '') : '';
+ const alone = ['father', 'staff'].includes(input.segment);
  if (name.length < 2 || name.length > 100 || !/^\+7[0-9]{10}$/.test(phone)
-  || !['family', 'father', 'student'].includes(input.segment)
+  || !['family', 'father', 'student', 'staff'].includes(input.segment)
   || !Number.isInteger(children) || children < 0 || children > 3
-  || (input.segment !== 'father' && children < 1)
-  || (input.segment === 'father' && children !== 0)
+  || (!alone && children < 1)
+  || (alone && children !== 0)
+  || (input.segment === 'student' && (children !== 1 || !/^\+7[0-9]{10}$/.test(parentPhone)))
   || !['ru', 'kk'].includes(input.language) || input.consent !== true) return null;
- return { name, phone, children, segment: input.segment, language: input.language };
+ return { name, phone, parentPhone, children, segment: input.segment, language: input.language };
 }
 const files = { '/phone.mjs': ['phone.mjs', 'text/javascript; charset=utf-8'], '/display.ttf': ['display.ttf', 'font/ttf'], '/fighter.png': ['fighter.png', 'image/png'], '/': ['index.html', 'text/html; charset=utf-8'], '/style.css': ['style.css', 'text/css'], '/app.js': ['app.js', 'text/javascript; charset=utf-8'] };
 export const server = http.createServer(async (req, res) => {
@@ -37,7 +44,7 @@ export const server = http.createServer(async (req, res) => {
    for await (const chunk of req) { body += chunk; if (Buffer.byteLength(body) > 8192) { res.writeHead(413); res.end('{"error":"size"}'); return; } }
    const data = validate(JSON.parse(body));
    if (!data) { res.writeHead(400); res.end('{"error":"validation"}'); return; }
-   db.prepare('INSERT INTO registrations (name,phone,segment,children,language,consent) VALUES (?,?,?,?,?,1)').run(data.name, data.phone, data.segment, data.children, data.language);
+   db.prepare('INSERT INTO registrations (name,phone,segment,children,language,parent_phone,consent) VALUES (?,?,?,?,?,?,1)').run(data.name, data.phone, data.segment, data.children, data.language, data.parentPhone);
    res.writeHead(201); res.end('{"ok":true}');
   } catch { res.writeHead(400); res.end('{"error":"request"}'); }
   return;
