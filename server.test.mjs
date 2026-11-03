@@ -4,11 +4,12 @@ import { validate, server } from './server.mjs';
 const base = { name:'Test Parent', phone:'+77000000000', segment:'family', children:2, language:'ru', consent:true };
 test('accepts all three attendance formats', () => {
  assert.ok(validate(base));
+ assert.ok(validate({...base,children:3}));
  assert.ok(validate({...base,segment:'father',children:0}));
  assert.ok(validate({...base,segment:'student',language:'kk'}));
 });
 test('rejects missing consent, invalid contact and inconsistent children counts', () => {
- for (const change of [{consent:false},{phone:'123'},{name:''},{segment:'other'},{children:0},{children:1.5},{segment:'father',children:1},{language:'en'}]) assert.equal(validate({...base,...change}),null);
+ for (const change of [{consent:false},{phone:'123'},{name:''},{segment:'other'},{children:0},{children:1.5},{children:4},{phone:"+12025550123"},{segment:'father',children:1},{language:'en'}]) assert.equal(validate({...base,...change}),null);
 });
 test('serves landing and refuses invalid registration and database access', async () => {
  await new Promise(resolve => server.listen(0,'127.0.0.1',resolve));

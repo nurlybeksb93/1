@@ -15,19 +15,19 @@ export function validate(input) {
  const name = typeof input.name === 'string' ? input.name.trim() : '';
  const phone = typeof input.phone === 'string' ? input.phone.replace(/[^\d+]/g, '') : '';
  const children = Number(input.children);
- if (name.length < 2 || name.length > 100 || !/^\+?[0-9]{10,15}$/.test(phone)
+ if (name.length < 2 || name.length > 100 || !/^\+7[0-9]{10}$/.test(phone)
   || !['family', 'father', 'student'].includes(input.segment)
-  || !Number.isInteger(children) || children < 0 || children > 10
+  || !Number.isInteger(children) || children < 0 || children > 3
   || (input.segment !== 'father' && children < 1)
   || (input.segment === 'father' && children !== 0)
   || !['ru', 'kk'].includes(input.language) || input.consent !== true) return null;
  return { name, phone, children, segment: input.segment, language: input.language };
 }
-const files = { '/display.ttf': ['display.ttf', 'font/ttf'], '/fighter.png': ['fighter.png', 'image/png'], '/': ['index.html', 'text/html; charset=utf-8'], '/style.css': ['style.css', 'text/css'], '/app.js': ['app.js', 'text/javascript; charset=utf-8'] };
+const files = { '/phone.mjs': ['phone.mjs', 'text/javascript; charset=utf-8'], '/display.ttf': ['display.ttf', 'font/ttf'], '/fighter.png': ['fighter.png', 'image/png'], '/': ['index.html', 'text/html; charset=utf-8'], '/style.css': ['style.css', 'text/css'], '/app.js': ['app.js', 'text/javascript; charset=utf-8'] };
 export const server = http.createServer(async (req, res) => {
  res.setHeader('X-Content-Type-Options', 'nosniff');
  res.setHeader('Referrer-Policy', 'same-origin');
- res.setHeader('Content-Security-Policy', "default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'");
+ res.setHeader('Content-Security-Policy', "default-src 'self'; connect-src 'self' https://script.google.com https://script.googleusercontent.com; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'");
  if (req.method === 'POST' && req.url === '/api/register') {
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Cache-Control', 'no-store');
